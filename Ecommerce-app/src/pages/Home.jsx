@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="px-[5%]">
-      <div className="bg-gray-100"></div>
-      <div className="">
-        <h2 className="font-bold text-xl">Search by Category</h2>
-        <div className="flex gap-4">
+      <section className="bg-gray-100"></section>
+      <section className="">
+        <h2 className="py-5 font-bold text-xl">Shop by Category</h2>
+        <div className="flex gap-4 mb-4">
           <Link to="/products">
             <div className="flex flex-col items-center">
               <img
@@ -28,7 +28,11 @@ const Home = () => {
             </div>
           </Link>
         </div>
-      </div>
+      </section>
+      <section>
+        <h2 className="font-bold text-xl">Featured Products</h2>
+        <p>Product 1 | Product 2 | Product 3 | Product 4</p>
+      </section>
     </div>
   );
 };

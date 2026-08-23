@@ -8,10 +8,10 @@ const Navbar = () => {
           <Link className="font-bold" to="/">
             e com
           </Link>
-        </li>{" "}
+        </li>
         {/*className={(e)=>{return e.isActive?"nav-active": "" }}*/}
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
           <form className="bg-white flex rounded-full px-5 py-1 w-[30vw]" action="">
@@ -25,7 +25,7 @@ const Navbar = () => {
         </li>
         <li>location</li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login">Sign In</Link>
         </li>
         <li>
           <Link to="/cart">Cart</Link>
