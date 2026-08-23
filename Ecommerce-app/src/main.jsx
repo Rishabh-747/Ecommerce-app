@@ -12,6 +12,7 @@ import Cart from './pages/Cart.jsx'
 import Products from './pages/Products.jsx'
 import ProductsDetails from './pages/ProductsDetails.jsx'
 import { ProductProvider } from './context/ProductContext.jsx';
+import Category from './pages/Category.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: 'cart', 
+        path: 'user/cart', 
         element: <Cart/>,
       },
       {
@@ -36,16 +37,20 @@ const router = createBrowserRouter([
         element: <Products/>,
       },
       {
-        path: 'register', 
+        path: 'sign-up/register', 
         element: <Register/>,
       },
       {
-        path: 'product-deatils', 
+        path: 'product/product-deatils', 
         element: <ProductsDetails/>,
       },
       {
         path: 'shop', 
         element: <Shop/>,
+      },
+      {
+        path: 'category/:category', 
+        element: <Category/>,
       },
     ],
   },

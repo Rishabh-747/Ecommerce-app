@@ -6,7 +6,7 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products")
+    fetch("https://dummyjson.com/products?limit=194")
       .then((res) => res.json())
       .then((data) => {
         console.log(data.products);
