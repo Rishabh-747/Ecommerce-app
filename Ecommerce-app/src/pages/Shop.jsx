@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
+import Products from "./Products";
+
 
 const Shop = () => {
   const { products } = useContext(ProductContext);
@@ -8,19 +10,7 @@ const Shop = () => {
       <h1 className="font-bold text-2xl text-center">Shop</h1>
       <div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(250px,1fr))] px-[5%] py-8">
         {products.map((product) => {
-          return (
-            <div className="rounded-lg mb-5 " key={product.id}>
-              <img
-                src={product.thumbnail}
-                alt="product image"
-                className="bg-mauve-200  rounded-lg"
-              />
-              <div className="p-2">
-                <h2>{product.title}</h2>
-                <p>$ {product.price}</p>
-              </div>
-            </div>
-          );
+          return  <Products key={product.id} product={product} />;
         })}
       </div>
     </div>

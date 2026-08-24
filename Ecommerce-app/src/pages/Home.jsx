@@ -25,7 +25,7 @@ const Home = () => {
       </section>
 
       {/* ===== Category Section ===== */}
-      <div className="px-[5%]">
+      <div className="px-[5%] py-10">
         <section className="py-3">
           <h2 className="py-5 font-bold text-xl">Shop by Category</h2>
           <div className="flex gap-4 rounded-b-lg overflow-x-auto">
