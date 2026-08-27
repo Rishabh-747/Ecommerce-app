@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css'
+import '@fontsource/instrument-sans';
 import App from './App.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Home from './pages/Home.jsx'
