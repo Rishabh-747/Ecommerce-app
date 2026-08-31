@@ -8,12 +8,12 @@ const Register = () => {
         <div className="bg-red-400 p-12 text-white rounded-l-lg flex ">
           <div className="m-auto flex items-center flex-col gap-3">
             <h2 className="font-black text-xl">Welcome back!</h2>
-            <p>
+            <p className="text-sm text-center">
               To keep connected with us, please login with your registered info
             </p>
             <Link
               to="/login"
-              className="bg-red-400 rounded-full font-bold border-2 text-xs px-5 py-1 border-amber-50"
+              className="bg-red-400 rounded-full border-2 text-xs px-6 py-1 border-amber-50"
             >
               SIGN IN
             </Link>
@@ -32,7 +32,7 @@ const Register = () => {
               L
             </a>
           </div>
-          <p>or use your email for registration</p>
+          <p className="text-sm mb-2">or use your email for registration</p>
           <form action="" className="">
             <input
               type="text"
@@ -47,12 +47,12 @@ const Register = () => {
             <input
               type="password"
               placeholder="Password"
-              className="mb-2 px-3 py-1 bg-gray-100 w-full"
+              className="mb-4 px-3 py-1 bg-gray-100 w-full"
             />
 
             <button
               type="submit"
-              className="bg-red-400 text-white rounded-full text-xs font-bold border-2 px-5 py-1 border-red-400"
+              className="bg-red-400 text-white rounded-full text-xs border-2 px-6 py-1 border-red-400"
             >
               SIGN UP
             </button>

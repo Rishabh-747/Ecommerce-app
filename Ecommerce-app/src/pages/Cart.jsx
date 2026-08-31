@@ -3,8 +3,8 @@ import React from 'react';
 
 const Cart = () => {
   return (
-    <div>
-      card items.
+    <div className='px-[5%] py-5'>
+      card items. 
     </div>
   )
 }

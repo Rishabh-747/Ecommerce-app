@@ -15,7 +15,6 @@ const ProductsDetails = () => {
   return (
     <div className="px-[5%] py-10">
       <div className="grid gap-10 grid-cols-2">
-
         {/* ===== Product Image ===== */}
         <div className="border flex justify-center p-3">
           <img src={product.thumbnail} alt={product.title} />
@@ -25,18 +24,27 @@ const ProductsDetails = () => {
         <div className="border p-4">
           <h1 className="font-bold text-xl">{product.title} </h1>
           <p>
-            <span>rating: </span>
-            {product.rating} ⭐
+            rating : <span>{product.rating} ⭐</span>
           </p>
           <p>${product.price}</p>
-          <p>{product.description}</p>
-          <p>{product.category}</p>
-          <p><span>Stock : </span>{product.stock}</p>
-          <p><span>Min. order : </span>{product.minimumOrderQuantity}</p>
-          <p>{product.returnPolicy}</p>
-          <p>{product.shippingInformation}</p>
-          <p>{product.warrantyInformation}</p>
-          <button className="px-5 py-2 my-2 rounded-lg bg-yellow-400 font-bold text-white">Add to Cart</button>
+          <p className="py-2">{product.description}</p>
+          <p>
+            Category : <span>{product.category}</span>
+          </p>
+          <p>
+            Stock : <span>{product.stock}</span>
+          </p>
+          <p>
+            Min. order : <span>{product.minimumOrderQuantity}</span>
+          </p>
+          <div className="grid grid-cols-3 text-center gap-5 p-4 border rounded-2xl my-2">
+            <p>{product.returnPolicy}</p>
+            <p>{product.shippingInformation}</p>
+            <p>{product.warrantyInformation}</p>
+          </div>
+          <button className="px-5 py-2 my-2 rounded-lg bg-yellow-400 font-bold text-white">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

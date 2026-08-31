@@ -11,8 +11,8 @@ const Category = () => {
     (product) => product.category === category
   );
   return (
-    <div className="px-[5%]">
-      <h1 className="font-bold text-2xl capitalize text-center">{category}</h1>
+    <div className="px-[5%] py-5">
+      <h1 className="py-2 font-bold text-2xl capitalize text-center">{category}</h1>
       <div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(250px,1fr))] py-3 ">
         {categoryProducts.map((product) => {
           return <Products key={product.id} product={product} />;

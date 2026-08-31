@@ -19,8 +19,14 @@ const Home = () => {
     <div className="">
       {/* ===== Hero Section ===== */}
       <section className="bg-gray-200">
-        <div className="">
-          <img src={Hero} alt="" />
+        <div className="relative">
+          <img src={Hero} alt="hero image" />
+          <Link
+            to="/shop"
+            className="absolute border bottom-25 hover:bg-white transition-all duration-300 ease-in-out hover:scale-105 hover:text-black left-10 text-white bg-black rounded-lg px-5 py-3"
+          >
+            Shop now
+          </Link>
         </div>
       </section>
 

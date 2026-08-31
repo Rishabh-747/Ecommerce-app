@@ -18,7 +18,7 @@ const Login = () => {
               L
             </a>
           </div>
-          <p>or use your account.</p>
+          <p className="text-sm">or use your account.</p>
           <form action="" className="py-2">
             <input
               type="email"
@@ -30,10 +30,10 @@ const Login = () => {
               placeholder="Password"
               className="mb-2 px-3 py-1 bg-gray-100 w-full"
             />
-            <p>forgot your password?</p>
+            <p className="text-sm mb-2">forgot your password?</p>
             <button
               type="submit"
-              className="bg-red-400 text-white rounded-full text-xs font-bold border-2 px-5 py-1 border-red-400"
+              className="bg-red-400 text-white rounded-full text-xs border-2 px-6 py-1 border-red-400"
             >
               SIGN IN
             </button>
@@ -43,10 +43,10 @@ const Login = () => {
           <div className="m-auto flex items-center flex-col gap-3">
 
           <h2 className="font-black text-xl">Hello, Friends!</h2>
-          <p>Enter your personal details and start shopping with us</p>
+          <p className="text-sm">Enter your personal details and start shopping with us</p>
           <Link
             to="/sign-up/register"
-            className="bg-red-400 rounded-full font-bold border-2 px-5 py-1 text-xs border-amber-50"
+            className="bg-red-400 rounded-full border-2 px-6 py-1 text-xs border-amber-50"
             >
             SIGN UP
           </Link>

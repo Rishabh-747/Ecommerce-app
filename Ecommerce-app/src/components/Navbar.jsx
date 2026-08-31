@@ -1,10 +1,19 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { IoCart } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { IoLocation } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 
 const Navbar = () => {
+  const { search, setSearch } = useContext(ProductContext);
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate("/shop");
+  };
   return (
     <nav className="shrink-0 ">
       <div className="flex px-[5%] py-2 justify-between">
@@ -26,10 +35,13 @@ const Navbar = () => {
               <form
                 className="bg-white flex justify-between border-gray-300 rounded-full px-5 py-1 border"
                 action=""
+                onSubmit={handleSearch}
               >
                 <input
-                  type="search"
+                  type="text"
                   placeholder="Search Products"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
                   className="outline-none"
                 />
                 <button type="submit">
