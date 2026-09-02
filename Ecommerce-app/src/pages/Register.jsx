@@ -21,14 +21,14 @@ const Register = () => {
         </div>
         <div className="p-10 rounded-r-lg text-center">
           <h2 className="font-black text-xl">Create Account</h2>
-          <div className="flex gap-3 justify-center">
-            <a href="https://google.com" target="blank">
+          <div className="flex gap-1 text-sm py-2 justify-center">
+            <a href="https://google.com" target="blank" className="border rounded-full w-6 h-6 flex justify-center items-center">
               G
             </a>
-            <a href="https://facebook.com" target="blank">
+            <a href="https://facebook.com" target="blank" className="border rounded-full w-6 h-6 flex justify-center items-center">
               F
             </a>
-            <a href="https://linkedin.com.in" target="blank">
+            <a href="https://linkedin.com.in" target="blank" className="border rounded-full w-6 h-6 flex justify-center items-center">
               L
             </a>
           </div>

@@ -30,14 +30,15 @@ const Home = () => {
         </div>
       </section>
 
+      <div className="px-[5%]">
+
       {/* ===== Category Section ===== */}
-      <div className="px-[5%] py-10">
-        <section className="py-3">
-          <h2 className="py-5 font-bold text-xl">Shop by Category</h2>
+        <section className="my-10 ">
+          <h2 className="py-2 font-bold text-xl">Shop by Category</h2>
           <div className="flex gap-4 rounded-b-lg overflow-x-auto">
             {categories.map((category) => (
               <Link
-                className="bg-gray-50 rounded-lg p-2"
+                className="bg-gray-50 hover:bg-gray-200 rounded-lg p-2"
                 key={category}
                 to={`/category/${category}`}
               >
@@ -55,8 +56,8 @@ const Home = () => {
         </section>
 
         {/* ===== Featured Section ===== */}
-        <section>
-          <h2 className="font-bold text-xl">Featured Products</h2>
+        <section className="my-10">
+          <h2 className="font-bold text-xl py-2">Featured Products</h2>
           <p>Product 1 | Product 2 | Product 3 | Product 4</p>
         </section>
       </div>

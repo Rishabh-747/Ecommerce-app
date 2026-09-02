@@ -19,12 +19,12 @@ const Navbar = () => {
       <div className="flex px-[5%] py-2 justify-between">
         <ul className="flex justify-between items-center gap-10">
           <li>
-            <Link className="font-bold text-2xl font-serif" to="/">
+            <Link className="font-bold text-2xl font-serif transition-all duration-300 hover:text-shadow-lg" to="/">
               e com
             </Link>
-          </li>
+          </li >
           {/*className={(e)=>{return e.isActive?"nav-active": "" }}*/}
-          <li>
+          <li className="hover:scale-108 transition-all ease-in-out duration-300">
             <Link to="/shop">Shop</Link>
           </li>
         </ul>
@@ -55,12 +55,12 @@ const Navbar = () => {
                 <span className="text-xs ">Delivery location</span>
               </div>
             </li>
-            <li>
+            <li className="hover:scale-108 transition-all ease-in-out duration-300">
               <Link to="/login" className="text-xl">
                 <CgProfile />
               </Link>
             </li>
-            <li>
+            <li className="hover:scale-108 transition-all ease-in-out duration-300">
               <Link to="/user/cart" className="text-xl">
                 <IoCart />
               </Link>
