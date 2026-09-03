@@ -13,6 +13,9 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
+  const clearCart = () => {
+    setCart([]);
+  }
   const addtoCart = (product) => {
     setCart((prevCart) => {
       const existingProduct = prevCart.find((item) => item.id === product.id);
@@ -59,6 +62,7 @@ export const CartProvider = ({ children }) => {
         increaseQuantity,
         decreaseQuantity,
         removefromCart,
+        clearCart,
       }}
     >
       {children}

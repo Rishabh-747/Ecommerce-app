@@ -19,6 +19,8 @@ import ProductsDetails from "./pages/ProductsDetails.jsx";
 import CartProvider from "./context/CartContext.jsx";
 import { ProductProvider } from "./context/ProductContext.jsx";
 import WishlistProvider from "./context/WishlistContext.jsx";
+import Checkout from "./pages/Checkout.jsx";
+import OrderSuccess from "./pages/OrderSuccess.jsx";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +63,14 @@ const router = createBrowserRouter([
       {
         path: "wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "order-success",
+        element: <OrderSuccess />,
       },
     ],
   },

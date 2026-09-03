@@ -68,7 +68,7 @@ const Cart = () => {
               <h2>Cart Summary</h2>
               <p className="mt-2">Total items: {totalItems}</p>
               <p className="mt-2">Total price: ${totalPrice.toLocaleString()} </p>
-              <button className="mt-4 bg-black text-white px-5 py-2 rounded">Checkout</button>
+              <Link to="/checkout"><button className="mt-4 bg-black text-white px-5 py-2 rounded">Checkout</button></Link>
             </div>
         </div>
       )}
