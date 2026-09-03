@@ -10,6 +10,7 @@ import Home from "./pages/Home.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
 import Shop from "./pages/Shop.jsx";
+import Wishlist from "./pages/Wishlist.jsx";
 import Cart from "./pages/Cart.jsx";
 import Category from "./pages/Category.jsx";
 import Products from "./pages/Products.jsx";
@@ -17,6 +18,7 @@ import ProductsDetails from "./pages/ProductsDetails.jsx";
 
 import CartProvider from "./context/CartContext.jsx";
 import { ProductProvider } from "./context/ProductContext.jsx";
+import WishlistProvider from "./context/WishlistContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,10 @@ const router = createBrowserRouter([
         path: "category/:category",
         element: <Category />,
       },
+      {
+        path: "wishlist",
+        element: <Wishlist />,
+      },
     ],
   },
 ]);
@@ -64,7 +70,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ProductProvider>
       <CartProvider>
+        <WishlistProvider>
         <RouterProvider router={router} />
+        </WishlistProvider>
       </CartProvider>
     </ProductProvider>
   </React.StrictMode>,
