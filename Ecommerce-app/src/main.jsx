@@ -1,23 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './index.css'
-import '@fontsource/instrument-sans';
-import App from './App.jsx'
-import NotFound from './pages/NotFound.jsx'
-import Home from './pages/Home.jsx'
-import Register from './pages/Register.jsx';
-import Login from './pages/Login.jsx';
-import Shop from './pages/Shop.jsx';
-import Cart from './pages/Cart.jsx'
-import Products from './pages/Products.jsx'
-import ProductsDetails from './pages/ProductsDetails.jsx'
-import { ProductProvider } from './context/ProductContext.jsx';
-import Category from './pages/Category.jsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import "@fontsource/instrument-sans";
+
+import App from "./App.jsx";
+import NotFound from "./pages/NotFound.jsx";
+import Home from "./pages/Home.jsx";
+import Register from "./pages/Register.jsx";
+import Login from "./pages/Login.jsx";
+import Shop from "./pages/Shop.jsx";
+import Cart from "./pages/Cart.jsx";
+import Category from "./pages/Category.jsx";
+import Products from "./pages/Products.jsx";
+import ProductsDetails from "./pages/ProductsDetails.jsx";
+
+import CartProvider from "./context/CartContext.jsx";
+import { ProductProvider } from "./context/ProductContext.jsx";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />, // Acts as the layout wrapper
     errorElement: <NotFound />, // Renders on 404s or app crashes
     children: [
@@ -26,41 +29,43 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'login', 
+        path: "login",
         element: <Login />,
       },
       {
-        path: 'user/cart', 
-        element: <Cart/>,
+        path: "user/cart",
+        element: <Cart />,
       },
       {
-        path: 'products', 
-        element: <Products/>,
+        path: "products",
+        element: <Products />,
       },
       {
-        path: 'sign-up/register', 
-        element: <Register/>,
+        path: "sign-up/register",
+        element: <Register />,
       },
       {
-        path: 'product/:id', 
-        element: <ProductsDetails/>,
+        path: "product/:id",
+        element: <ProductsDetails />,
       },
       {
-        path: 'shop', 
-        element: <Shop/>,
+        path: "shop",
+        element: <Shop />,
       },
       {
-        path: 'category/:category', 
-        element: <Category/>,
+        path: "category/:category",
+        element: <Category />,
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ProductProvider>
-    <RouterProvider router={router} />
-  </ProductProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </ProductProvider>
   </React.StrictMode>,
-)
+);

@@ -10,8 +10,16 @@ const Shop = () => {
   const [category, setCategory] = useState("all");
   const [priceRange, setPriceRange] = useState([1, 37000]);
   const [rating, setRating] = useState(0);
+  const [sortBy, setSortBy] = useState("default");
 
   const categories = [...new Set(products.map((product) => product.category))];
+
+  const clearFilters = () => {
+    setCategory("all");
+    setPriceRange([0, 37000]);
+    setRating(0);
+    setSortBy("default")
+  }
 
   const filteredProducts = products.filter((product) => {
     const matchSearch = product.title
@@ -28,6 +36,20 @@ const Shop = () => {
     return matchSearch && matchCategory && matchPrice && matchRating;
   });
 
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortBy === "price-low") {
+      return a.price - b.price;
+    }
+    if (sortBy === "price-high") {
+      return b.price - a.price;
+    }
+    if (sortBy === "rating-high") {
+      return b.rating - a.rating;
+    }
+
+    return 0;
+  });
+
   return (
     <div className="py-5">
       <h1 className="font-bold text-2xl text-center">Shop</h1>
@@ -36,7 +58,7 @@ const Shop = () => {
         <aside className="w-56 shrink-0 border p-3 h-fit">
           <div className="flex justify-between items-center mb-4">
             <h2>Filter</h2>
-            <button onClick={() => setCategory("all")} className="underline">
+            <button onClick={clearFilters} className="underline">
               Clear
             </button>
           </div>
@@ -100,6 +122,16 @@ const Shop = () => {
                 </label>
             ))}
           </div>
+
+          <div className="mt-6">
+            <h3>Sort By</h3>
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="boder p-2 w-full">
+              <option value="default">Default</option>
+              <option value="price-low">Price Low-High</option>
+              <option value="price-high">Price High-Low</option>
+              <option value="rating-high">Rating High-Low</option>
+            </select>
+          </div>
         </aside>
 
         {/* ===== Product ===== */}
@@ -111,8 +143,8 @@ const Shop = () => {
             </div>
           )}
 
-          <div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] ">
-            {filteredProducts.map((product) => (
+          <div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] max-h-[150vh] overflow-auto ">
+            {sortedProducts.map((product) => (
               <Products key={product.id} product={product} />
             ))}
           </div>

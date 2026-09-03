@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
+import { CartContext } from "../context/CartContext";
 
 const ProductsDetails = () => {
+  const { addtoCart } = useContext(CartContext)
   const { products } = useContext(ProductContext);
   const { id } = useParams();
 
@@ -42,7 +44,8 @@ const ProductsDetails = () => {
             <p>{product.shippingInformation}</p>
             <p>{product.warrantyInformation}</p>
           </div>
-          <button className="px-5 py-2 my-2 rounded-lg bg-yellow-400 font-bold text-white">
+          <button onClick={() => addtoCart(product)}
+          className="px-5 py-2 my-2 rounded-lg bg-yellow-400 font-bold text-white transition-transform duration-75 ease-out active:scale-95 active:bg-yellow-500 active:text-white hover:bg-white hover:text-yellow-400 border">
             Add to Cart
           </button>
         </div>

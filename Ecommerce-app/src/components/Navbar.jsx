@@ -4,11 +4,17 @@ import { CgProfile } from "react-icons/cg";
 import { IoLocation } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import { ProductContext } from "../context/ProductContext";
 
 const Navbar = () => {
   const { search, setSearch } = useContext(ProductContext);
   const navigate = useNavigate();
+  const { cart } = useContext(CartContext);
+
+  const cartCount = cart.reduce(
+    (total, item) => total + item.quantity, 0
+  );
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -61,8 +67,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="hover:scale-108 transition-all ease-in-out duration-300">
-              <Link to="/user/cart" className="text-xl">
-                <IoCart />
+              <Link to="/user/cart" className="text-xl flex">
+                <IoCart /><span className="text-xs">{cartCount}</span>
               </Link>
             </li>
           </ul>
