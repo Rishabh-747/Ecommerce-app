@@ -7,7 +7,7 @@ const Products = ({ product }) => {
         <img
           src={product.thumbnail}
           alt="product image"
-          className="bg-gray-200 group-hover:bg-white  rounded-lg"
+          className="bg-gray-200 group-hover:bg-white transition-all duration-200 rounded-lg"
         />
         <div className="p-2">
           <h2>{product.title}</h2>

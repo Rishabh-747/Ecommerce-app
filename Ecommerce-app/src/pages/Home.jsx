@@ -38,7 +38,7 @@ const Home = () => {
           <div className="flex gap-4 rounded-b-lg overflow-x-auto">
             {categories.map((category) => (
               <Link
-                className="bg-gray-50 hover:bg-gray-200 rounded-lg p-2"
+                className="bg-gray-50 hover:bg-gray-200 transition-all duration-200 rounded-lg p-2"
                 key={category}
                 to={`/category/${category}`}
               >
