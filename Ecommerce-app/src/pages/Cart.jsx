@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { MdDelete } from "react-icons/md";
@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 const Cart = () => {
   const { cart, increaseQuantity, decreaseQuantity, removefromCart } =
     useContext(CartContext);
+  const navigate = useNavigate();
 
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = cart.reduce(
@@ -18,7 +19,18 @@ const Cart = () => {
       <h1 className="text-2xl font-bold text-center mb-8">Your Cart</h1>
 
       {cart.length === 0 ? (
-        <p className="">Your cart is empty.</p>
+        <div className="min-h-[70vh] flex flex-col justify-center items-center px-5">
+          <h1 className="text-3xl font-bold mb-3">Your Cart is Empty</h1>
+          <p className="text-gray-600 mb-5">
+            Add some Products here to buy it.
+          </p>
+          <button
+            onClick={() => navigate("/shop")}
+            className="px-6 py-3 bg-black text-white rounded-lg font-bold border hover:bg-white hover:text-black active:scale-95 duration-75 transition"
+          >
+            Continue Shopping
+          </button>
+        </div>
       ) : (
         <div className="space-y-5">
           {cart.map((item) => (
@@ -63,13 +75,17 @@ const Cart = () => {
             </div>
           ))}
 
-           {/* ===== Cart Summary ===== */}
-            <div className="mt-6">
-              <h2>Cart Summary</h2>
-              <p className="mt-2">Total items: {totalItems}</p>
-              <p className="mt-2">Total price: ${totalPrice.toLocaleString()} </p>
-              <Link to="/checkout"><button className="mt-4 bg-black text-white px-5 py-2 rounded">Checkout</button></Link>
-            </div>
+          {/* ===== Cart Summary ===== */}
+          <div className="mt-6">
+            <h2>Cart Summary</h2>
+            <p className="mt-2">Total items: {totalItems}</p>
+            <p className="mt-2">Total price: ${totalPrice.toLocaleString()} </p>
+            <Link to="/checkout">
+              <button className="mt-4 bg-black text-white px-5 py-2 rounded">
+                Checkout
+              </button>
+            </Link>
+          </div>
         </div>
       )}
     </div>

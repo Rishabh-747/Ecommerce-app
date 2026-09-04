@@ -9,7 +9,12 @@ const OrderSuccess = () => {
       <p className="mb-5 text-gray-600">
         Thank you for your purchase, Your order has been placed successfully.
       </p>
-      <Link to="/shop" className="px-6 py-3 bg-black text-white font-bold rounded-lg border transition hover:bg-white hover:text-black">Continue Shopping</Link>
+      <Link
+        to="/shop"
+        className="px-6 py-3 bg-black text-white font-bold rounded-lg border transition hover:bg-white hover:text-black"
+      >
+        Continue Shopping
+      </Link>
     </div>
   );
 };
