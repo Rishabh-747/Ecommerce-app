@@ -29,17 +29,17 @@ const ProductsDetails = () => {
   const product = products.find((product) => product.id === Number(id));
 
   if (!product) {
-    return <h1>Product not fonud. </h1>;
+    return <h1>Product not found. </h1>;
   }
 
   const isInCart = cart.some((item) => item.id === product.id);
 
   return (
     <div className="px-[5%] py-10">
-      <div className="grid gap-10 max-w-350 justify-center m-auto grid-cols-2">
+      <div className="grid gap-8 lg:gap-10 max-w-350 justify-center mx-auto grid-cols-1 md:grid-cols-2 ">
         {/* ===== Product Image ===== */}
         <div className="border flex justify-center p-3">
-          <img src={product.thumbnail} alt={product.title} />
+          <img src={product.thumbnail} alt={product.title} className="w-full h-80 md:h-100 object-contain" />
         </div>
 
         {/* ===== Product Content ===== */}
@@ -59,13 +59,13 @@ const ProductsDetails = () => {
           <p>
             Min. order : <span>{product.minimumOrderQuantity}</span>
           </p>
-          <div className="grid grid-cols-3 text-center justify-between gap-5 p-4 border rounded-2xl my-2">
+          <div className="grid grid-cols-1 sm:grid-cols-3 text-center justify-between gap-3 p-4 border rounded-2xl my-2">
             <p>{product.returnPolicy}</p>
             <p>{product.shippingInformation}</p>
             <p>{product.warrantyInformation}</p>
           </div>
-          <div className="flex justify-around">
-            <div className="flex flex-col gap-1 w-[50%] justify-start items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-1 w-full sm:w-[50%] justify-start items-center">
               <button
                 onClick={() => addtoCart(product)}
                 className="px-5 py-2 my-2 rounded-lg bg-yellow-400 font-bold text-white transition-transform duration-75 ease-out active:scale-95 active:bg-yellow-500 active:text-white hover:bg-white hover:text-yellow-400 border"
@@ -74,7 +74,7 @@ const ProductsDetails = () => {
               </button>
               {isInCart && (
                 <Link
-                  to="/user/cart"
+                  to="/cart"
                   className="px-4 py-2 rounded ml-2 bg-gray-100"
                 >
                   Go to Cart
@@ -82,7 +82,7 @@ const ProductsDetails = () => {
               )}
             </div>
 
-            <div className="flex flex-col gap-2 w-[50%] justify-start py-3 items-center">
+            <div className="flex flex-col gap-2 w-full sm:w-[50%] justify-start py-3 items-center">
               <button
                 type="button"
                 onClick={() => toggleWishlist(product)}

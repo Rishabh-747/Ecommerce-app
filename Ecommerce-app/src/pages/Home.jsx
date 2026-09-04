@@ -39,9 +39,12 @@ const Home = () => {
       {/* ===== Hero Section ===== */}
       <section className="">
         <div className="relative h-100 md:h-137 overflow-hidden ">
-
           {/* ====== Hero Image ====== */}
-          <img src={Hero} alt="hero image" className="h-full w-full object-cover"/>
+          <img
+            src={Hero}
+            alt="hero image"
+            className="h-full w-full object-cover"
+          />
 
           {/* ====== Overlay ====== */}
           <div className="absolute inset-0 bg-black/20"></div>
@@ -65,7 +68,7 @@ const Home = () => {
                 key={category}
                 to={`/category/${category}`}
               >
-                <div className=" flex flex-col justify-center items-center w-50">
+                <div className=" flex flex-col justify-center items-center w-40 sm:w-44 md:w-50">
                   <img
                     className=""
                     src={categoryImages[category]}
@@ -87,7 +90,7 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {featuredProducts.map((product) => (
               <Products key={product.id} product={product} />
             ))}
@@ -144,9 +147,19 @@ const Home = () => {
         {/* ====== CTA Section ====== */}
         <section className="py-10">
           <div className="bg-black text-white rounded-2xl px-6 py-12 md:px-12 text-center">
-            <h2 className="text-2xl md:text-4xl font-bold">Find Something You'll Love</h2>
-            <p className="text-gray-300 mt-3 mb-6 max-w-xl mx-auto">Explore our collections and discover our products made for your everyday needs.</p>
-            <Link to="/shop" className="px-6 py-3 bg-white text-black rounded-lg border-2 border-white transition hover:bg-black hover:text-white">Shop Now →</Link>
+            <h2 className="text-2xl md:text-4xl font-bold">
+              Find Something You'll Love
+            </h2>
+            <p className="text-gray-300 mt-3 mb-6 max-w-xl mx-auto">
+              Explore our collections and discover our products made for your
+              everyday needs.
+            </p>
+            <Link
+              to="/shop"
+              className="px-6 py-3 bg-white text-black rounded-lg border-2 border-white transition hover:bg-black hover:text-white"
+            >
+              Shop Now →
+            </Link>
           </div>
         </section>
       </div>

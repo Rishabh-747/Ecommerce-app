@@ -80,7 +80,7 @@ const Navbar = () => {
 
           {/* ====== Cart ====== */}
           <Link
-            to="/user/cart"
+            to="/cart"
             className="relative text-xl hover:scale-110 transition-transform"
           >
             <IoCart />
@@ -94,7 +94,7 @@ const Navbar = () => {
 
         {/* ====== Mobile Icons ====== */}
         <div className="flex md:hidden items-center gap-5">
-          <Link to="/user/cart" className="relative text-xl">
+          <Link to="/cart" className="relative text-xl">
             <IoCart />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex justify-center items-center">

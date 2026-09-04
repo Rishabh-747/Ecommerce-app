@@ -13,7 +13,6 @@ import Shop from "./pages/Shop.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import Cart from "./pages/Cart.jsx";
 import Category from "./pages/Category.jsx";
-import Products from "./components/Products.jsx";
 import ProductsDetails from "./pages/ProductsDetails.jsx";
 
 import CartProvider from "./context/CartContext.jsx";
@@ -33,26 +32,6 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "user/cart",
-        element: <Cart />,
-      },
-      {
-        path: "products",
-        element: <Products />,
-      },
-      {
-        path: "sign-up/register",
-        element: <Register />,
-      },
-      {
-        path: "product/:id",
-        element: <ProductsDetails />,
-      },
-      {
         path: "shop",
         element: <Shop />,
       },
@@ -61,8 +40,16 @@ const router = createBrowserRouter([
         element: <Category />,
       },
       {
+        path: "product/:id",
+        element: <ProductsDetails />,
+      },
+      {
         path: "wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
       {
         path: "checkout",
@@ -71,6 +58,14 @@ const router = createBrowserRouter([
       {
         path: "order-success",
         element: <OrderSuccess />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
       },
     ],
   },

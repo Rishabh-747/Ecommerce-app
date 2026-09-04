@@ -45,7 +45,7 @@ const Login = () => {
           <h2 className="font-black text-xl">Hello, Friends!</h2>
           <p className="text-sm">Enter your personal details and start shopping with us</p>
           <Link
-            to="/sign-up/register"
+            to="/register"
             className="bg-red-400 rounded-full border-2 px-6 py-1 text-xs border-amber-50"
             >
             SIGN UP

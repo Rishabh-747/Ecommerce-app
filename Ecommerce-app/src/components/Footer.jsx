@@ -31,7 +31,7 @@ const Footer = () => {
                 Wishlist
               </Link>
 
-              <Link to="/user/cart" className="hover:text-white transition">
+              <Link to="/cart" className="hover:text-white transition">
                 Cart
               </Link>
             </div>

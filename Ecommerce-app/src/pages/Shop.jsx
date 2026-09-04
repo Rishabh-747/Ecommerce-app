@@ -16,7 +16,7 @@ const Shop = () => {
 
   const clearFilters = () => {
     setCategory("all");
-    setPriceRange([0, 37000]);
+    setPriceRange([1, 37000]);
     setRating(0);
     setSortBy("default")
   }
@@ -69,9 +69,9 @@ const Shop = () => {
   return (
     <div className="py-5">
       <h1 className="font-bold text-2xl text-center">Shop</h1>
-      <div className="flex px-5 py-5 gap-6">
+      <div className="flex flex-col lg:flex-row px-5 py-5 gap-6">
         {/* ===== Filter Sidebar ===== */}
-        <aside className="w-56 shrink-0 border p-3 h-fit">
+        <aside className="w-full lg:w-56 shrink-0 border p-3 h-fit">
           <div className="flex justify-between items-center mb-4">
             <h2>Filter</h2>
             <button onClick={clearFilters} className="underline">
@@ -141,7 +141,7 @@ const Shop = () => {
 
           <div className="mt-6">
             <h3>Sort By</h3>
-            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="boder p-2 w-full">
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="border p-2 w-full">
               <option value="default">Default</option>
               <option value="price-low">Price Low-High</option>
               <option value="price-high">Price High-Low</option>
@@ -159,7 +159,7 @@ const Shop = () => {
             </div>
           )}
 
-          <div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] max-h-[150vh] overflow-auto ">
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
             {sortedProducts.map((product) => (
               <Products key={product.id} product={product} />
             ))}
