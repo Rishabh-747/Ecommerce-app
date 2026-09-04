@@ -13,7 +13,7 @@ import Shop from "./pages/Shop.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import Cart from "./pages/Cart.jsx";
 import Category from "./pages/Category.jsx";
-import Products from "./pages/Products.jsx";
+import Products from "./components/Products.jsx";
 import ProductsDetails from "./pages/ProductsDetails.jsx";
 
 import CartProvider from "./context/CartContext.jsx";

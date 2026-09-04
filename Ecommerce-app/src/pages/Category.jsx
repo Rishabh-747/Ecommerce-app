@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import { useParams } from "react-router-dom";
-import Products from "./Products";
+import Products from "../components/Products";
 
 const Category = () => {
   const { products, error, loading } = useContext(ProductContext);

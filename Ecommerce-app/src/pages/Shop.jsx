@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
-import Products from "./Products";
+import Products from "../components/Products";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
