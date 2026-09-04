@@ -59,7 +59,7 @@ const Cart = () => {
 
               {/* ===== Product Deatils ===== */}
               <div className="flex-1 min-w-0">
-                <h2 className="font-bold text-lg">{item.title}</h2>
+                <h2 className="font-bold text-lg line-clamp-2">{item.title}</h2>
                 <p className="text-gray-600 mt-1 ">${item.price}</p>
 
                 {/* ===== Quantity ===== */}
@@ -85,7 +85,7 @@ const Cart = () => {
                 <p>${(item.price * item.quantity).toFixed(2)}</p>
                 <button
                   onClick={() => removefromCart(item.id)}
-                  className="text-xl active:scale-90 duration-75 transition-transform"
+                  className="w-9 h-9 flex justify-center items-center text-xl rounded-lg hover:bg-gray-100 active:scale-90 duration-75 transition"
                 >
                   <MdDelete />
                 </button>

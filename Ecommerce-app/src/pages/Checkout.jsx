@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const { cart, clearCart } = useContext(CartContext);
@@ -111,7 +111,7 @@ const Checkout = () => {
     <div className="px-[5%] py-5">
       <h1 className="text-3xl font-bold mb-6">Checkout</h1>
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {/* ======= Customer Deatils ======= */}
 
         <div className="border rounded-xl p-5">
@@ -187,7 +187,7 @@ const Checkout = () => {
             </div>
 
             {/* ===== City + State ===== */}
-            <div className="grid gap-4 grid-cols-2">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
               <div className="">
                 <label className="block mb-2 font-medium">City</label>
                 <input
@@ -254,7 +254,7 @@ const Checkout = () => {
                 />
 
                 <div className="flex-1">
-                  <h2 className="font-semibold">{item.title}</h2>
+                  <h2 className="font-semibold line-clamp-2">{item.title}</h2>
 
                   <p className="text-sm text-gray-500 ">
                     Quantity: {item.quantity}

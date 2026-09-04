@@ -119,7 +119,7 @@ const Navbar = () => {
 
           {/* ====== Mobile Menu ====== */}
 
-          <div className="md:hidden fixed top-18 left-4 right-4 bg-white rounded border z-50 p-6 animate-menuDown shadow-xl">
+          <div className="md:hidden fixed top-18 left-4 right-4 bg-white rounded-lg border z-50 p-5 sm:p-6 animate-menuDown shadow-xl">
             {/* ====== Menu Header ====== */}
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold">Menu</h2>
@@ -149,9 +149,13 @@ const Navbar = () => {
               </button>
             </form>
 
-{/* ====== Menu Links ====== */}
+            {/* ====== Menu Links ====== */}
             <div className="flex flex-col gap-5 ">
-              <Link to="/shop" onClick={() => setMenuOpen(false)} className="font-medium transition-transform hover:translate-x-1 duration-200 ease-in">
+              <Link
+                to="/shop"
+                onClick={() => setMenuOpen(false)}
+                className="font-medium transition-transform hover:translate-x-1 duration-200 ease-in"
+              >
                 Shop
               </Link>
 

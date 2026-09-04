@@ -17,12 +17,12 @@ const Wishlist = () => {
   return (
     <div className='px-[5%] py-5'>
       <h1 className='font-bold text-3xl mb-8'>My Wishlist</h1>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {wishlist.map((product) => (
             <div key={product.id} className="border border-gray-300 p-4 rounded-xl">
                 <img src={product.thumbnail} alt={product.title}
                 className='w-full h-48 object-contain' />
-                <h2 className='font-bold mt-3'>{product.title}</h2>
+                <h2 className='font-bold mt-3 line-clamp-2'>{product.title}</h2>
                 <p className='mt-2'>${product.price}</p>
                 <button onClick={() => toggleWishlist(product)}
                 className='mt-2 px-4 py-2 border rounded active:bg-black active:text-white transition duration-75 ease-in'>Remove</button>

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="shrink-0 bg-black text-white mt-10">
-      <div className="px-[5%] py-10">
+      <div className="px-[5%] py-8 sm:py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* ====== Brands ====== */}
           <div className="">
             <h2 className="text-2xl font-bold mb-4">ShopEase</h2>
             <p className="text-gray-400 leading-6">
               Discover quality products at great prices. Simple, reliable and
-              conveninet shopping.
+              convenient shopping.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ const Footer = () => {
           {/* ====== Contact ====== */}
           <div className="">
             <h3 className="font-bold text-lg mb-4">Contact</h3>
-            <div className="flex flex-col gap-3 text-gray-400">
+            <div className="flex flex-col gap-3 wrap-break-word text-gray-400">
               <p>📧 support@shopease.com</p>
               <p>📞 +91 98765 43210</p>
               <p>📍 India</p>
