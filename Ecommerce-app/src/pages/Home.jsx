@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import Hero from "../assets/Hero.png";
 const Home = () => {
-  const { products } = useContext(ProductContext);
+  const { products, loading, error } = useContext(ProductContext);
 
   const categories = [...new Set(products.map((product) => product.category))];
 
@@ -14,6 +14,22 @@ const Home = () => {
 
     categoryImages[category] = product?.thumbnail;
   });
+
+  if (loading) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <p className="text-xl font-semibold">Loading products...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <p className="text-xl font-semibold text-red-500">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="">
@@ -31,8 +47,7 @@ const Home = () => {
       </section>
 
       <div className="px-[5%]">
-
-      {/* ===== Category Section ===== */}
+        {/* ===== Category Section ===== */}
         <section className="my-10 ">
           <h2 className="py-2 font-bold text-xl">Shop by Category</h2>
           <div className="flex gap-4 rounded-b-lg overflow-x-auto">

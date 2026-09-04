@@ -99,7 +99,7 @@ const Checkout = () => {
         </p>
         <button
           onClick={() => navigate("/shop")}
-          className="px-6 py-3 bg-black text-white rounded-lg font-bold border hover:bg-white hover:text-black active:scale-95 duration-75 transition"
+          className="px-6 py-3 bg-black text-white rounded-lg font-bold border hover:bg-white hover:text-black active:scale-95 ease-in active:bg-black active:text-white duration-75 transition"
         >
           Continue Shopping
         </button>
@@ -294,7 +294,7 @@ const Checkout = () => {
           <button
             type="button"
             onClick={handlePlaceOrder}
-            className="w-full mt-5 bg-black border-2 text-white py-3 rounded-lg font-bold hover:bg-white hover:text-black transition"
+            className="w-full mt-5 bg-black border-2 text-white py-3 rounded-lg font-bold hover:bg-white hover:text-black active:scale-98 active:bg-black active:text-white ease-in duration-75 transition"
           >
             Place Order
           </button>

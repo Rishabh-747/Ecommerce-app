@@ -1,13 +1,16 @@
 import React, { useContext } from 'react'
 import { WishlistContext } from '../context/WishlistContext'
+import { Link } from 'react-router-dom';
 
 const Wishlist = () => {
     const { wishlist, toggleWishlist } = useContext(WishlistContext);
 
     if (wishlist.length === 0) {
         return (
-            <div className="min-h-[60vh] flex justify-center items-center">
-                <h1 className='text-2xl font-bold'>Your Wishlist is Empty </h1>
+            <div className="min-h-[50vh] flex flex-col justify-center items-center">
+                <h1 className='text-2xl font-bold mb-2'>Your Wishlist is Empty </h1>
+                <p className='text-gray-500 mb-5'>You haven't added any products to your wishlist yet.</p>
+                <Link to="/shop" className='px-6 py-3 bg-black text-white hover:bg-white hover:text-black active:scale-90 ease-in active:bg-black active:text-white rounded-lg font-bold border transition-all duration-75'>Continue Shopping</Link>
             </div>
         );
     }
@@ -22,7 +25,7 @@ const Wishlist = () => {
                 <h2 className='font-bold mt-3'>{product.title}</h2>
                 <p className='mt-2'>${product.price}</p>
                 <button onClick={() => toggleWishlist(product)}
-                className='mt-2 px-4 py-2 border rounded'>Remove</button>
+                className='mt-2 px-4 py-2 border rounded active:bg-black active:text-white transition duration-75 ease-in'>Remove</button>
             </div>
         ))}
       </div>

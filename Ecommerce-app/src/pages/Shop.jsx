@@ -5,7 +5,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
 const Shop = () => {
-  const { products, search } = useContext(ProductContext);
+  const { products, search, loading, error } = useContext(ProductContext);
 
   const [category, setCategory] = useState("all");
   const [priceRange, setPriceRange] = useState([1, 37000]);
@@ -49,6 +49,22 @@ const Shop = () => {
 
     return 0;
   });
+
+  if (loading) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <p className="text-xl font-semibold">Loading products...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <p className="text-xl font-semibold text-red-500">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="py-5">
